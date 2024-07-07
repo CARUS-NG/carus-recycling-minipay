@@ -1,5 +1,5 @@
-export const CARUSTOKEN = "0xEA7FC56140C15aBBFFDe6e893452b7852641C130" as const;
-export const CARUS = "0x717eC783295AB32f87cE4b83C37BbbE73b854F28" as const;
+export const CARUSTOKEN = "0x1B6392587887e325E3F9149d2AAbF2088Ec32E46" as const;
+export const CARUS = "0x3149F2ea5513DB6EB49171192847DeF8824B6840" as const;
 export const CARUSTOKENABI = [
   {
     inputs: [],
@@ -638,6 +638,50 @@ export const CARUSABI = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "Transactions",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "initiator",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "receiver",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "details",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "timestamp",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "address",
         name: "",
         type: "address",
@@ -977,6 +1021,51 @@ export const CARUSABI = [
         internalType: "struct Carus.Transaction",
         name: "_transaction",
         type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "transactionsFunc",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "id",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "initiator",
+            type: "address",
+          },
+          {
+            internalType: "address",
+            name: "receiver",
+            type: "address",
+          },
+          {
+            internalType: "string",
+            name: "details",
+            type: "string",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "timestamp",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct Carus.Transaction[]",
+        name: "_transactions",
+        type: "tuple[]",
       },
     ],
     stateMutability: "view",
