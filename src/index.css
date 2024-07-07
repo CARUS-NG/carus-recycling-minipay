@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.is-highlighted {
+    border: 2px solid #026937;
+    box-shadow: 0 0 10px #026937;
+}
+
+.scroll-component::-webkit-scrollbar {
+    display: none;
+}
