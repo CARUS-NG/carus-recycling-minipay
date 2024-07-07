@@ -18,7 +18,7 @@ Carus partners with local governments, businesses, and recycling facilities to b
 Carus will have a research and development team that is continually exploring new recycling technologies and materials to reduce waste and environmental impact.
 
 
-## DEVELOPMENT TOOLS
+## TOOLS USED AND DAPP INFO
 ### Client:
 - [Vite-React](https://github.com/vitejs/vite)
 - [Tailwindcss](https://github.com/tailwindlabs/tailwindcss)
@@ -28,6 +28,16 @@ Carus will have a research and development team that is continually exploring ne
 - [Nodejs(express)](https://github.com/expressjs/express)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Docker](https://www.docker.com/)
+
+## Smart contract and integration:
+- [ethersJs](https://github.com/ethers-io/ethers.js)
+- [Wagmi](https://github.com/wevm/wagmi)
+- [viemJs](https://github.com/wevm/viem)
+- Carus dApp:  0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46
+- Carus Token: 0xDC4cd3c206a7fd7c758840F75B72a1b8d64208D6
+- Tokens: cUSD as reward for recycling and CELO for gas fees
+- [Carus dApp verified contract link](https://alfajores.celoscan.io/address/0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46#code)
+- [Carus token verified contract link](https://alfajores.celoscan.io/address/0xDC4cd3c206a7fd7c758840F75B72a1b8d64208D6#code)
 
 
 ## HOW TO SETUP CARUS
