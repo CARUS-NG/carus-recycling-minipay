@@ -1,8 +1,12 @@
-# React + Vite
+# CARUS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## OVERVIEW
 
-Currently, two official plugins are available:
+Carus Recycling is a decentralized recycling platform that allows users to get incentivized through the Celo dollar (cUSD) by scheduling waste pick-ups and drop-offs effortlessly for recycling. The company's mission is to transform the way the world recycles and disposes of waste, transitioning toward a truly circular economy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## KEY OFFERINGS
+- ### Effortless Scheduling of Waste Pick-up and Drop-off:
+Carus provides an intuitive platform for users to schedule convenient waste and recycling pickups from their homes or businesses.
+Users can input their location and select preferred pickup dates/times, streamlining the waste management process.
+The scheduling system optimizes pickup routes to improve efficiency and reduce environmental impact.
+Carus maintains a network of strategically located dropoff centers for users to conveniently deposit recyclables and waste, with locations mapped out based on user density and accessibility.
