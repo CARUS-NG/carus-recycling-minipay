@@ -49,7 +49,6 @@ const Landing = () => {
 
   if (isSuccess) {
     toast.success("Successful daily mint")
-    claimReward({ oxAddress: address as string })
   }
 
   const handleSubmit = () => {
