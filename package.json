@@ -1,30 +1,39 @@
 {
-  "name": "celo-composer-minipay-template",
-  "version": "1.0.0",
-  "description": "Custom Celo Composer project.",
+  "name": "carusminipay",
   "private": true,
-  "author": "Celo",
-  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "react-app:dev": "yarn workspace @celo-composer-minipay-template/react-app dev",
-    "react-app:build": "yarn workspace @celo-composer-minipay-template/react-app build",
-    "react-app:start": "yarn workspace @celo-composer-minipay-template/react-app start",
-    "react-app:lint": "yarn workspace @celo-composer-minipay-template/react-app lint"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/celo-org/celo-composer.git"
+  "dependencies": {
+    "@heroicons/react": "^2.1.4",
+    "@tanstack/react-query": "^5.50.1",
+    "autoprefixer": "^10.4.19",
+    "axios": "^1.7.2",
+    "ethers": "^6.13.1",
+    "formik": "^2.4.6",
+    "moment": "^2.30.1",
+    "postcss": "^8.4.39",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1",
+    "react-toastify": "^10.0.5",
+    "tailwindcss": "^3.4.4",
+    "viem": "2.x",
+    "wagmi": "^2.10.9"
   },
-  "bugs": {
-    "url": "https://github.com/celo-org/celo-composer/issues"
-  },
-  "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
-  "workspaces": [
-    "packages/*",
-    "hardhat/*"
-  ],
-  "keywords": [
-    "celo-composer",
-    "celo"
-  ]
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "vite": "^5.3.1"
+  }
 }
