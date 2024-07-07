@@ -1,5 +1,5 @@
-export const CARUSTOKEN = "0x1B6392587887e325E3F9149d2AAbF2088Ec32E46" as const;
-export const CARUS = "0x3149F2ea5513DB6EB49171192847DeF8824B6840" as const;
+export const CARUSTOKEN = "0xDC4cd3c206a7fd7c758840F75B72a1b8d64208D6" as const;
+export const CARUS = "0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46" as const;
 export const CARUSTOKENABI = [
   {
     inputs: [],
