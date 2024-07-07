@@ -16,3 +16,38 @@ Carus partners with local governments, businesses, and recycling facilities to b
 
 - ### Sustainable Material Innovation:
 Carus will have a research and development team that is continually exploring new recycling technologies and materials to reduce waste and environmental impact.
+
+
+## DEVELOPMENT TOOLS
+### Client:
+- [Vite-React](https://github.com/vitejs/vite)
+- [Tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+
+### Backend:
+- [Solidity](https://github.com/ethereum/solidity)
+- [Nodejs(express)](https://github.com/expressjs/express)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+
+
+## HOW TO SETUP CARUS
+1. Clone the repo on your local: 
+```
+git clone https://github.com/CARUS-NG/carus-recycling-minipay
+```
+2. Install dependencies:
+```
+yarn
+```
+3. Include environment variables: [example here](https://github.com/CARUS-NG/carus-recycling-minipay/blob/master/.env.example)
+4. Start the development server"
+``` 
+yarn dev
+```
+5. Check terminal for url, default url is `http://localhost:5173`
+
+## CONTRIBUTING
+- Fork the repository
+- Create a branch with the name of your contribution
+- Make Changes and commit
+- Create a pull request
