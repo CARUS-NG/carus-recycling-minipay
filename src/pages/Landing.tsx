@@ -13,7 +13,7 @@ import { useClaimDailyReward } from '../services/dailyClaim';
 
 const Landing = () => {
   const { address, chainId } = useAccount()
-  const { mutate: claimReward,  } = useClaimDailyReward()
+  const { mutate: claimReward, } = useClaimDailyReward()
   const { writeContract, isPending, isError, isSuccess, isIdle, error } = useWriteContract()
   const { data: dailyReached, isLoading: isLoading1 } = useReadContract({
     abi: CARUSABI,
@@ -41,6 +41,7 @@ const Landing = () => {
 
   if (isError) {
     toast.error("Error during daily mint!")
+    console.log(error)
   }
 
   if (isPending) {
