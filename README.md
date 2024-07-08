@@ -33,7 +33,6 @@ Carus will have a research and development team that is continually exploring ne
 - [ethersJs](https://github.com/ethers-io/ethers.js)
 - [Wagmi](https://github.com/wevm/wagmi)
 - [viemJs](https://github.com/wevm/viem)
-- Deployment: CELO mainnet
 - Carus dApp:  0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46
 - Tokens: cUSD as reward for recycling and CELO for gas fees
 - [Carus dApp verified contract link](https://alfajores.celoscan.io/address/0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46#code)
