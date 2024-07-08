@@ -35,11 +35,8 @@ Carus will have a research and development team that is continually exploring ne
 - [viemJs](https://github.com/wevm/viem)
 - Deployment: CELO mainnet
 - Carus dApp:  0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46
-- Carus Token: 0xDC4cd3c206a7fd7c758840F75B72a1b8d64208D6
 - Tokens: cUSD as reward for recycling and CELO for gas fees
 - [Carus dApp verified contract link](https://alfajores.celoscan.io/address/0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46#code)
-- [Carus token verified contract link](https://alfajores.celoscan.io/address/0xDC4cd3c206a7fd7c758840F75B72a1b8d64208D6#code)
-
 
 ## HOW TO SETUP CARUS
 1. Clone the repo on your local: 
