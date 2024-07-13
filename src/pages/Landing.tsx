@@ -109,10 +109,9 @@ const Landing = () => {
               <p className="font-bold text-lg">
                 Total Earnings :{" "}
                 <span className="text-[#026937]">
-                  {accountTokenBalance ? Number(formatEther(accountTokenBalance)).toFixed(2) : 0} cUSD
+                  {accountTokenBalance ? Number(formatEther(accountTokenBalance)).toFixed(4) : 0} cUSD
                 </span>
               </p>
-              <p>{`${error}`}</p>
               <div className="mt-4 space-y-2">
                 {transactionByAddress?.length > 0 ? transactionByAddress?.slice(0, 3).reverse().map((item, itemIdx) => (
                   <HistoryCard
