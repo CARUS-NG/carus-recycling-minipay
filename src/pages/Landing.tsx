@@ -22,6 +22,17 @@ const Landing = () => {
     account: address
   })
 
+  const wait = (milliseconds: any) => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    });
+  };
+
+  const waitPage = async () => {
+    await wait(9000);
+    window.location.reload();
+  }
+
   const { data: accountTokenBalance, isLoading: isLoading2 } = useReadContract({
     abi: CARUSABI,
     address: CARUS,
@@ -50,6 +61,7 @@ const Landing = () => {
 
   if (isSuccess) {
     toast.success("Successful daily mint")
+    waitPage()
   }
 
   const handleSubmit = () => {
@@ -60,6 +72,8 @@ const Landing = () => {
       account: address,
     })
   }
+
+  useEffect(() => { }, [])
 
 
   return (
@@ -95,9 +109,10 @@ const Landing = () => {
               <p className="font-bold text-lg">
                 Total Earnings :{" "}
                 <span className="text-[#026937]">
-                  {accountTokenBalance ? formatEther(accountTokenBalance) : 0} cUSD
+                  {accountTokenBalance ? Number(formatEther(accountTokenBalance)).toFixed(2) : 0} cUSD
                 </span>
               </p>
+              <p>{`${error}`}</p>
               <div className="mt-4 space-y-2">
                 {transactionByAddress?.length > 0 ? transactionByAddress?.slice(0, 3).reverse().map((item, itemIdx) => (
                   <HistoryCard

@@ -1,9 +1,9 @@
 import { http, createConfig } from "wagmi";
-import { celoAlfajores } from "wagmi/chains";
+import { celo } from "wagmi/chains";
 
 export const config = createConfig({
-  chains: [celoAlfajores],
+  chains: [celo],
   transports: {
-    [celoAlfajores.id]: http(),
+    [celo.id]: http(),
   },
 });
