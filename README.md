@@ -33,9 +33,10 @@ Carus will have a research and development team that is continually exploring ne
 - [ethersJs](https://github.com/ethers-io/ethers.js)
 - [Wagmi](https://github.com/wevm/wagmi)
 - [viemJs](https://github.com/wevm/viem)
-- Carus dApp:  0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46
+- Deployment: Celo Mainnet
+- Carus:  0xACCB18F3eaad4649a831ce583140C5452E1FAD9c
 - Tokens: cUSD as reward for recycling and CELO for gas fees
-- [Carus dApp verified contract link](https://alfajores.celoscan.io/address/0xF05Dd3298353a3E2A2CEc196350e75D6F33CfF46#code)
+- [Carus verified contract link](https://celoscan.io/address/0xACCB18F3eaad4649a831ce583140C5452E1FAD9c#code)
 
 ## HOW TO SETUP CARUS
 1. Clone the repo on your local: 
