@@ -11,7 +11,7 @@ const Schedule = () => {
     const { data } = useGetSchedules(address as string)
     console.log(data)
     return (
-        <div className='space-y-10 max-w-3xl mx-auto mt-5'>
+        <div className='space-y-10 max-w-3xl mx-auto mt-5 pb-24'>
             <Link to={'/pickup'} className='bg-[#F3F3F3] p-3 flex justify-between rounded-[10px] h-28'>
                 <div className='flex flex-col justify-end'>
                     <p className='font-bold'>Schedule Pickup</p>
@@ -32,7 +32,7 @@ const Schedule = () => {
                 </div>
             </Link>
 
-            <div>
+            <div className=''>
                 <p className='font-bold mt-3'>Schedule History</p>
                 <div className='space-y-3 mt-3'>
                     {data?.map((item) => (
