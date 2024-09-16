@@ -1,61 +1,197 @@
-# CARUS
+<!-- TITLE -->
+<p align="center"> 
+  <img width="100px" src="https://github.com/celo-org/celo-composer/blob/main/images/readme/celo_isotype.svg" align="center" alt="Celo" />
+ <h2 align="center">Celo Composer</h2>
+ <p align="center">Build, deploy, and iterate quickly on decentralized applications using Celo.</p>
+</p>
+  <p align="center">
+    <a href="https://github.com/celo-org/celo-composer/graphs/stars">
+      <img alt="GitHub Contributors" src="https://img.shields.io/github/stars/celo-org/celo-composer?color=FCFF52" />
+    </a>
+    <a href="https://github.com/celo-org/celo-composer/graphs/contributors">
+      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/celo-org/celo-composer?color=E7E3D4" />
+    </a>
+    <a href="https://github.com/celo-org/celo-composer/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/celo-org/celo-composer?color=E7E3D4" />
+    </a>
+    <a href="https://github.com/celo-org/celo-composer/pulls">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/celo-org/celo-composer?color=E7E3D4" />
+    </a>
+    <a href="https://opensource.org/license/mit/">
+      <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    </a>
+  </p>
+</p>
 
-## OVERVIEW
+<!-- TABLE OF CONTENTS -->
 
-Carus Recycling is a decentralized recycling platform that allows users to get incentivized through the Celo dollar (cUSD) by scheduling waste pick-ups and drop-offs effortlessly for recycling. The company's mission is to transform the way the world recycles and disposes of waste, transitioning toward a truly circular economy.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-## KEY OFFERINGS
-- ### Effortless Scheduling of Waste Pick-up and Drop-off:
-Carus provides an intuitive platform for users to schedule convenient waste and recycling pickups from their homes or businesses. Users can input their location and select preferred pickup dates/times, streamlining the waste management process. The scheduling system optimizes pickup routes to improve efficiency and reduce environmental impact. Carus maintains a network of strategically located dropoff centers for users to conveniently deposit recyclables and waste, with locations mapped out based on user density and accessibility.
+<!-- ABOUT THE PROJECT -->
 
-- ### Blockchain-Enabled Recycling Rewards:
-Carus has developed a cryptocurrency-based rewards system that incentivizes responsible recycling behavior. Consumers can earn "The Celo Dollar (cUSD)" for properly sorting and depositing recyclables, which can then be redeemed or donated. 
+## About The Project
 
-- ### Closed-Loop Recycling Ecosystems:
-Carus partners with local governments, businesses, and recycling facilities to build integrated recycling hubs that optimize material flows and minimize waste. These ecosystems incorporate reverse logistics, material processing, and end-product manufacturing to create a truly circular system.
+Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
 
-- ### Sustainable Material Innovation:
-Carus will have a research and development team that is continually exploring new recycling technologies and materials to reduce waste and environmental impact.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
+## Built With
 
-## TOOLS USED AND DAPP INFO
-### Client:
-- [Vite-React](https://github.com/vitejs/vite)
-- [Tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+Celo Composer is built on Celo to make it simple to build dApps using a variety of front-end frameworks, and libraries.
 
-### Backend:
-- [Solidity](https://github.com/ethereum/solidity)
-- [Nodejs(express)](https://github.com/expressjs/express)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Docker](https://www.docker.com/)
+- [Celo](https://celo.org/)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.19/)
+- [Next.js](https://nextjs.org/)
+- [React.js](https://reactjs.org/)
+- [Material UI](https://mui.com/)
+- [React Native](https://reactnative.dev/)
+- [Flutter](https://docs.flutter.dev/)
+- [React-celo](https://github.com/celo-org/react-celo/)
+- [Rainbowkit-celo](https://github.com/celo-org/rainbowkit-celo)
 
-## Smart contract and integration:
-- [ethersJs](https://github.com/ethers-io/ethers.js)
-- [Wagmi](https://github.com/wevm/wagmi)
-- [viemJs](https://github.com/wevm/viem)
-- Deployment: Celo Mainnet
-- Carus:  0xACCB18F3eaad4649a831ce583140C5452E1FAD9c
-- Tokens: cUSD as reward for recycling and CELO for gas fees
-- [Carus verified contract link](https://celoscan.io/address/0xACCB18F3eaad4649a831ce583140C5452E1FAD9c#code)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## HOW TO SETUP CARUS
-1. Clone the repo on your local: 
+<!-- GETTING STARTED -->
+
+## Prerequisites
+
+- Node
+- Git (v2.38 or higher)
+
+## How to use Celo Composer
+
+The easiest way to start with Celo Composer is using `@celo/celo-composer`. This CLI tool lets you quickly start building dApps on Celo for multiple frameworks, including React (with either react-celo or rainbowkit-celo), React Native (w/o Expo), Flutter, and Angular. To get started, just run the following command, and follow the steps:
+
+```bash
+npx @celo/celo-composer@latest create
 ```
-git clone https://github.com/CARUS-NG/carus-recycling-minipay
-```
-2. Install dependencies:
-```
-yarn
-```
-3. Include environment variables: [example here](https://github.com/CARUS-NG/carus-recycling-minipay/blob/master/.env.example)
-4. Start the development server"
-``` 
-yarn dev
-```
-5. Check terminal for url, default url is `http://localhost:5173`
 
-## CONTRIBUTING
-- Fork the repository
-- Create a branch with the name of your contribution
-- Make Changes and commit
-- Create a pull request
+### Front-end framework
+
+![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_1.png?raw=true)
+
+### Web3 library (for react-app)
+
+![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_2.png?raw=true)
+
+### Smart contract framework
+
+![Celo Composer tool selection](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_3.png?raw=true)
+
+### Subgraph
+
+![Celo Composer subgraph support](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_4.png?raw=true)
+
+### Name your dApp
+
+![Celo Composer dApp name](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_5.png?raw=true)
+
+**_🔥Voila, you have a dApp ready to go. Voila, you have a dApp ready to go. Start building your dApp on Celo._**
+
+### Getting started
+
+Once your custom dApp has been created, just install dependencies, either with `yarn` or `npm i`, and run the respective script from the `package.json` file.
+## Supported Frameworks
+
+### React
+
+- Support for Website and Progressive Web Application.
+- Works with all major crypto wallets.
+
+Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-app/README.md) to learn more about.
+
+### React Native
+
+- Out of the box config, just focus on buidl.
+- Support for Android and IOS.
+- Works with and without [Expo](https://expo.dev/).
+- Working example app included.
+
+Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-native-app/README.md) to learn more about.
+
+### Flutter
+
+- One command to get started - Type `flutter run` to start development in your mobile phone.
+- Works with all major mobile crypto wallets.
+- Support for Android, IOS (Web, Windows, and Linux coming soon).
+- Working example app included.
+
+Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/flutter-app/README.md) to learn more about.
+
+### Angular
+
+- Support for Website and Progressive Web Application.
+- Works with all major crypto wallets.
+
+Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/angular-app/README.md) to learn more about.
+
+<!-- USAGE EXAMPLES -->
+
+## 🔭 Learning Solidity
+
+📕 Read the docs: <https://docs.soliditylang.org>
+
+- [Primitive Data Types](https://solidity-by-example.org/primitives/)
+- [Mappings](https://solidity-by-example.org/mapping/)
+- [Structs](https://solidity-by-example.org/structs/)
+- [Modifiers](https://solidity-by-example.org/function-modifier/)
+- [Events](https://solidity-by-example.org/events/)
+- [Inheritance](https://solidity-by-example.org/inheritance/)
+- [Payable](https://solidity-by-example.org/payable/)
+- [Fallback](https://solidity-by-example.org/fallback/)
+
+📧 Learn the [Solidity globals and units](https://solidity.readthedocs.io/en/v0.8.19/units-and-global-variables.html)
+
+## Support
+
+Join the Celo Discord server at <https://chat.celo.org>. Reach out on the dedicated repo channel [here](https://discord.com/channels/600834479145353243/941003424298856448).
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+See the [open issues](https://github.com/celo-org/celo-composer/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+We welcome contributions from the community.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<!-- CONTACT -->
+## Contact
+
+- [@CeloDevs](https://twitter.com/CeloDevs)
+- [Discord](https://discord.com/invite/celo)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
