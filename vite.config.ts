@@ -29,16 +29,12 @@ const pwaOptions: Partial<VitePWAOptions> = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tsConfigPaths(),
-    VitePWA(pwaOptions),
-  ],
+  plugins: [react(), tsConfigPaths(), VitePWA(pwaOptions)],
   server: {
     open: true,
-    port: 3000
+    port: 3000,
   },
   build: {
-    sourcemap: true
-  }
+    sourcemap: true,
+  },
 });

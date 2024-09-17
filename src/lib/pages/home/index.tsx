@@ -1,6 +1,7 @@
 import { ChevronRight } from 'lucide-react';
 import { useAccount } from 'wagmi';
 
+import { useGetSchedules } from '../../../api/schedule';
 import { CurrencySelect } from '../../components/currencySelect';
 import FormatBalance from '../../components/formatBalance';
 import { TotalEarningsTooltip } from '../../components/totalEarningsTooltip';
@@ -9,6 +10,9 @@ import { ROBO_URL } from '../../utils/index';
 
 const Home = () => {
   const { address } = useAccount();
+  const { data: schedules, isPending: isLoadingGetSchedules } = useGetSchedules(
+    address as string
+  );
   // const { mutate: claimReward, } = useClaimDailyReward()
   // const { writeContract, isPending, isError, isSuccess, isIdle, error } = useWriteContract()
   // const { data: dailyReached, isLoading: isLoading1 } = useReadContract({
@@ -67,15 +71,6 @@ const Home = () => {
   //         account: address,
   //     })
   // }
-
-  const transactions = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-  ];
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -150,9 +145,13 @@ const Home = () => {
                 <ChevronRight size={12} />
               </div>
             </div>
-            {transactions.slice(0, 3).map((transaction) => (
-              <TransactionCard />
-            ))}
+            {schedules &&
+              !isLoadingGetSchedules &&
+              schedules
+                .slice(0, 6)
+                .map((transaction) => (
+                  <TransactionCard transaction={transaction} />
+                ))}
           </div>
         </div>
       )}

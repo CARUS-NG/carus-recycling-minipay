@@ -1,6 +1,10 @@
+import moment from 'moment';
+
+import type { Schedule } from '@/api/schedule/types';
+
 import TransactionStatus from './transactionStatus';
 
-const TransactionCard = () => {
+const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
   return (
     <div>
       <div className="flex justify-between rounded-xl bg-white p-3">
@@ -11,7 +15,7 @@ const TransactionCard = () => {
             className="aspect-square w-11"
           />
           <div className="flex flex-col items-start">
-            <p>Plastic</p>
+            <p className="capitalize">{transaction.material}</p>
             <div className="flex items-end space-x-1">
               <svg
                 width="18"
@@ -27,7 +31,9 @@ const TransactionCard = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <p className="text-xs text-[#919191]">Aug 28, 2024</p>
+              <p className="text-xs text-[#919191]">
+                {moment(transaction.date).format('MMM Do YY')}
+              </p>
               <svg
                 width="18"
                 height="18"
@@ -42,13 +48,20 @@ const TransactionCard = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <p className="text-xs text-[#919191]">16:22</p>
+              <p className="text-xs text-[#919191]">
+                {moment(transaction.date).format('LT')}
+              </p>
             </div>
           </div>
         </div>
         <div className="flex flex-col items-center space-y-1">
-          <p className="text-sm font-medium">$ 17.21</p>
-          <TransactionStatus status="pending" />
+          <p className="text-sm font-medium">
+            cUSD{' '}
+            {Number(transaction.amount).toLocaleString(undefined, {
+              maximumFractionDigits: 3,
+            })}
+          </p>
+          <TransactionStatus status={transaction.status} />
         </div>
       </div>
     </div>
