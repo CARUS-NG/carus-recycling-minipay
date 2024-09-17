@@ -1,42 +1,61 @@
-<img src="https://og.sznm.dev/api/generate?heading=vite-react-tailwind-starter&text=React+vite+template+with+TailwindCSS+and+TypeScript+setup.&template=color&center=true&height=330" />
+# CARUS
 
-This is a project bootstrapped with [`@vitejs/app`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) (`react-ts`), added with [TailwindCSS](https://tailwindcss.com) and [TypeScript](https://www.typescriptlang.org) setup.
+## OVERVIEW
 
-- ⚡ blazing fast dev server and build
-- 🔗 route management added (`react-router-dom` configured)
+Carus Recycling is a decentralized recycling platform that allows users to get incentivized through the Celo dollar (cUSD) by scheduling waste pick-ups and drop-offs effortlessly for recycling. The company's mission is to transform the way the world recycles and disposes of waste, transitioning toward a truly circular economy.
 
-[**Live Demo**](https://vite-react-tailwind-starter.sznm.dev/)
+## KEY OFFERINGS
+- ### Effortless Scheduling of Waste Pick-up and Drop-off:
+Carus provides an intuitive platform for users to schedule convenient waste and recycling pickups from their homes or businesses. Users can input their location and select preferred pickup dates/times, streamlining the waste management process. The scheduling system optimizes pickup routes to improve efficiency and reduce environmental impact. Carus maintains a network of strategically located dropoff centers for users to conveniently deposit recyclables and waste, with locations mapped out based on user density and accessibility.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https://github.com/sozonome/vite-react-tailwind-starter) [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sozonome/vite-react-tailwind-starter)
+- ### Blockchain-Enabled Recycling Rewards:
+Carus has developed a cryptocurrency-based rewards system that incentivizes responsible recycling behavior. Consumers can earn "The Celo Dollar (cUSD)" for properly sorting and depositing recyclables, which can then be redeemed or donated. 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/sozonome/vite-react-tailwind-starter)
+- ### Closed-Loop Recycling Ecosystems:
+Carus partners with local governments, businesses, and recycling facilities to build integrated recycling hubs that optimize material flows and minimize waste. These ecosystems incorporate reverse logistics, material processing, and end-product manufacturing to create a truly circular system.
 
-## Getting Started
+- ### Sustainable Material Innovation:
+Carus will have a research and development team that is continually exploring new recycling technologies and materials to reduce waste and environmental impact.
 
-You can either click [`Use this template`](https://github.com/sozonome/vite-react-tailwind-starter/generate) button on this repository and clone the repo or use npx degit like so:
 
-```bash
-npx degit sozonome/vite-react-tailwind-starter <app_name>
+## TOOLS USED AND DAPP INFO
+### Client:
+- [Vite-React](https://github.com/vitejs/vite)
+- [Tailwindcss](https://github.com/tailwindlabs/tailwindcss)
+
+### Backend:
+- [Solidity](https://github.com/ethereum/solidity)
+- [Nodejs(express)](https://github.com/expressjs/express)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+
+## Smart contract and integration:
+- [ethersJs](https://github.com/ethers-io/ethers.js)
+- [Wagmi](https://github.com/wevm/wagmi)
+- [viemJs](https://github.com/wevm/viem)
+- Deployment: Celo Mainnet
+- Carus:  0xACCB18F3eaad4649a831ce583140C5452E1FAD9c
+- Tokens: cUSD as reward for recycling and CELO for gas fees
+- [Carus verified contract link](https://celoscan.io/address/0xACCB18F3eaad4649a831ce583140C5452E1FAD9c#code)
+
+## HOW TO SETUP CARUS
+1. Clone the repo on your local: 
 ```
-
+git clone https://github.com/CARUS-NG/carus-recycling-minipay
 ```
-pnpm i
+2. Install dependencies:
 ```
-
-Then, run the development server:
-
-```bash
-pnpm dev
+yarn
 ```
+3. Include environment variables: [example here](https://github.com/CARUS-NG/carus-recycling-minipay/blob/master/.env.example)
+4. Start the development server"
+``` 
+yarn dev
+```
+5. Check terminal for url, default url is `http://localhost:5173`
 
-## Deployment
-
-- build command: `pnpm build`
-- output directory: `dist`
-
-## References
-
-- [vite](https://vitejs.dev)
-  - [avoid manual import](https://vitejs.dev/guide/features.html#jsx)
-- [TailwindCSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org)
+## CONTRIBUTING
+- Fork the repository
+- Create a branch with the name of your contribution
+- Make Changes and commit
+- Create a pull request
