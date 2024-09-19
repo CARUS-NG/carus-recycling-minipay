@@ -19,3 +19,10 @@ export const getSchedules = async (ox: string): Promise<Schedule[]> => {
   const res = await http.get(`/schedule/${ox}`);
   return res.data.data;
 };
+
+export const getTotalEarning = async (
+  ox: string
+): Promise<{ total: number }> => {
+  const res = await http.get(`/transactions/${ox}/totalEarnings`);
+  return res.data.data;
+};

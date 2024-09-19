@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import Layout from './lib/layout';
 import Routings from './lib/router/Routings';

@@ -1,4 +1,5 @@
 export const GET_SCHEDULES_KEY = 'getSchedules' as const;
+export const GET_TOTAL_EARNING_KEY = 'getTotalEarning' as const;
 
 export interface Schedule {
   address: string;

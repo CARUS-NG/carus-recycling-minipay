@@ -1,18 +1,24 @@
 import { ChevronRight } from 'lucide-react';
 import { useAccount } from 'wagmi';
 
-import { useGetSchedules } from '../../../api/schedule';
+import { useGetSchedules, useGetTotalEarning } from '../../../api/schedule';
 import { CurrencySelect } from '../../components/currencySelect';
 import FormatBalance from '../../components/formatBalance';
 import { TotalEarningsTooltip } from '../../components/totalEarningsTooltip';
 import TransactionCard from '../../components/transactionCard';
 import { ROBO_URL } from '../../utils/index';
+import { emitCommingSoonToast } from '@/lib/components/comingSoonToast';
+import { formatcUsd } from '@/lib/utils/format';
 
 const Home = () => {
   const { address } = useAccount();
   const { data: schedules, isPending: isLoadingGetSchedules } = useGetSchedules(
     address as string
   );
+
+  const { data: totalEarning, isPending: isLoadingTotalEarning } =
+    useGetTotalEarning(address as string);
+
   // const { mutate: claimReward, } = useClaimDailyReward()
   // const { writeContract, isPending, isError, isSuccess, isIdle, error } = useWriteContract()
   // const { data: dailyReached, isLoading: isLoading1 } = useReadContract({
@@ -97,7 +103,8 @@ const Home = () => {
             <div className="flex items-end space-x-1">
               <p className="text-xs">cUSD</p>
               <FormatBalance
-                value={321.42}
+                isLoading={isLoadingTotalEarning}
+                value={Number(formatcUsd(totalEarning?.total as number))}
                 decimalClassName="text-xl font-semibold"
                 wholeNumberClassName="text-4xl font-semibold"
               />
@@ -125,16 +132,20 @@ const Home = () => {
                 />
                 <p className="mt-2 text-xs font-medium">Daily Claim</p>
               </div>
-              <div className="flex cursor-not-allowed flex-col items-center rounded-xl border-2 py-3">
+              <button
+                type="button"
+                onClick={() => emitCommingSoonToast()}
+                className="flex cursor-not-allowed flex-col items-center rounded-xl border-2 py-3"
+              >
                 <img
                   src="/assets/dropoff.png"
                   alt="dropoff"
                   className="relative aspect-square w-16 object-contain"
                 />
                 <p className="mt-2 text-xs font-medium text-[#0000004D]">
-                  Pickup
+                  Drop off
                 </p>
-              </div>
+              </button>
             </div>
           </div>
 

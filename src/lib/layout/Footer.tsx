@@ -7,12 +7,12 @@ import FooterLink from '../components/footerLink';
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 flex w-full items-center justify-between border-t bg-white px-[10%] py-6">
+    <div className="fixed bottom-0 flex w-full max-w-lg items-center justify-between border-t bg-white px-[5%] py-6">
       <FooterLink icon={HiHome} text="Home" link="/" />
       <FooterLink icon={IoCalendarOutline} text="Schedule" link="/schedule" />
       <FooterLink icon={FiFileText} text="History" link="/history" />
       <FooterLink icon={CiUser} text="Profile" link="/profile" />
-    </footer>
+    </div>
   );
 };
 
