@@ -1,4 +1,5 @@
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useAccount } from 'wagmi';
 
 import { useGetSchedules, useGetTotalEarning } from '../../../api/schedule';
@@ -91,7 +92,7 @@ const Home = () => {
         <div className="mx-auto mt-5 flex w-full flex-col pb-20">
           <div className="flex w-full items-center justify-start space-x-2">
             <img
-              src={`${ROBO_URL}/gg`}
+              src={`${ROBO_URL}/${address}`}
               alt="avatar"
               className="aspect-square w-10 rounded-full"
             />
@@ -119,14 +120,17 @@ const Home = () => {
           <div className="mt-4 flex flex-col">
             <p className="text-xl font-semibold">Quick Actions</p>
             <div className="mt-3 grid grid-cols-3 gap-3">
-              <div className="flex flex-col items-center rounded-xl bg-white py-3">
+              <Link
+                to="/schedule/pickup"
+                className="flex flex-col items-center rounded-xl bg-white py-3"
+              >
                 <img
                   src="/assets/pickup.png"
                   alt="pickup"
                   className="relative aspect-square w-16 object-contain"
                 />
                 <p className="mt-2 text-xs font-medium">Pickup</p>
-              </div>
+              </Link>
               <div className="flex flex-col items-center rounded-xl bg-white py-3">
                 <img
                   src="/assets/gift.png"
@@ -155,9 +159,12 @@ const Home = () => {
           <div className="mt-4 flex flex-col space-y-3">
             <div className="flex items-center justify-between">
               <p className="text-xl font-semibold">Transaction History</p>
-              <div className="rounded-full border bg-white p-1.5 shadow-md">
+              <Link
+                to="/history"
+                className="rounded-full border bg-white p-1.5 shadow-md"
+              >
                 <ChevronRight size={12} />
-              </div>
+              </Link>
             </div>
             {schedules &&
               !isLoadingGetSchedules &&

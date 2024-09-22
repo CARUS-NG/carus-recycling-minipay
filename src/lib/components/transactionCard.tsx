@@ -32,9 +32,9 @@ const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
                 />
               </svg>
               <p className="text-xs text-[#919191]">
-                {moment(transaction.date).format('MMM Do YY')}
+                {moment(transaction.date).format('MMM Do YYYY')}
               </p>
-              <svg
+              {/* <svg
                 width="18"
                 height="18"
                 viewBox="0 0 18 18"
@@ -50,7 +50,7 @@ const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
               </svg>
               <p className="text-xs text-[#919191]">
                 {moment(transaction.date).format('LT')}
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
