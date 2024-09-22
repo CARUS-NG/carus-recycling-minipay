@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PathRouteProps } from 'react-router-dom';
 
+import DailyClaim from '../pages/daily-claim';
 import History from '../pages/history';
 import Profile from '../pages/profile';
 import Schedule from '../pages/schedule';
@@ -28,6 +29,10 @@ export const routes: Array<PathRouteProps> = [
   {
     path: '/profile',
     element: <Profile />,
+  },
+  {
+    path: '/daily-claim',
+    element: <DailyClaim />,
   },
 ];
 

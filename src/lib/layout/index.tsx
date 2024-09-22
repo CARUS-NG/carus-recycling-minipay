@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import { useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import Footer from './Footer';
@@ -13,6 +14,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const { pathname } = useLocation();
   return (
     <div>
       <Meta />
@@ -22,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
         <SkeletonTheme baseColor="#f7f7f7" highlightColor="#EEEEEE">
           <div className="w-full px-[5%]">{children}</div>
         </SkeletonTheme>
-        <Footer />
+        {pathname !== '/daily-claim' && <Footer />}
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import { TotalEarningsTooltip } from '../../components/totalEarningsTooltip';
 import TransactionCard from '../../components/transactionCard';
 import { ROBO_URL } from '../../utils/index';
 import { emitCommingSoonToast } from '@/lib/components/comingSoonToast';
+import Loader from '@/lib/components/loader';
 import { formatcUsd } from '@/lib/utils/format';
 
 const Home = () => {
@@ -131,14 +132,17 @@ const Home = () => {
                 />
                 <p className="mt-2 text-xs font-medium">Pickup</p>
               </Link>
-              <div className="flex flex-col items-center rounded-xl bg-white py-3">
+              <Link
+                to="/daily-claim"
+                className="flex flex-col items-center rounded-xl bg-white py-3"
+              >
                 <img
                   src="/assets/gift.png"
                   alt="gift"
                   className="relative aspect-square w-16 object-contain"
                 />
                 <p className="mt-2 text-xs font-medium">Daily Claim</p>
-              </div>
+              </Link>
               <button
                 type="button"
                 onClick={() => emitCommingSoonToast()}
@@ -169,10 +173,25 @@ const Home = () => {
             {schedules &&
               !isLoadingGetSchedules &&
               schedules
-                .slice(0, 6)
+                .slice(0, 4)
                 .map((transaction) => (
                   <TransactionCard transaction={transaction} />
                 ))}
+            {!schedules && isLoadingGetSchedules && <Loader />}
+            {!isLoadingGetSchedules && !schedules && (
+              <div className="mx-auto flex max-w-[60%] flex-col items-center text-center">
+                <img
+                  className="mx-auto pt-10"
+                  src="/assets/garbage.png"
+                  alt="empty"
+                />
+                <p className="text-sm font-semibold">No transaction history</p>
+                <p className="text-xs text-gray-500">
+                  Your data history is currently empty. Start recycling today to
+                  see your impact.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}

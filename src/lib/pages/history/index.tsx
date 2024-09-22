@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAccount } from 'wagmi';
 
 import { useGetSchedules, useGetTotalEarning } from '@/api/schedule';
+import Loader from '@/lib/components/loader';
 import TransactionCard from '@/lib/components/transactionCard';
 import { formatcUsd } from '@/lib/utils/format';
 
@@ -35,6 +36,21 @@ const History = () => {
           schedules.map((transaction) => (
             <TransactionCard transaction={transaction} />
           ))}
+        {!schedules && isLoadingGetSchedules && <Loader />}
+        {!isLoadingGetSchedules && !schedules && (
+          <div className="mx-auto flex max-w-[60%] flex-col items-center text-center">
+            <img
+              className="mx-auto pt-10"
+              src="/assets/garbage.png"
+              alt="empty"
+            />
+            <p className="text-sm font-semibold">No transaction history</p>
+            <p className="text-xs text-gray-500">
+              Your data history is currently empty. Start recycling today to see
+              your impact.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

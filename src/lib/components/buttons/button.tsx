@@ -29,7 +29,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           'h-10 w-full rounded-[8px] px-4 py-2 text-xs font-medium shadow-md hover:bg-opacity-90 hover:shadow-none md:h-14 xl:text-sm',
           'transition-colors duration-500',
-          [isDisabled && 'cursor-not-allowed'],
+          [isDisabled && 'cursor-not-allowed bg-gray-600'],
           [variant === 'primary' && 'bg-[#036937] text-white'],
           [
             variant === 'secondary' &&
