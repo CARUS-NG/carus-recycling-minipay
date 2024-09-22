@@ -10,6 +10,8 @@ export const postSchedulePickup = async (data: {
   container_amount: number;
   address: string;
   date: string;
+  country_code: string;
+  phone: string;
 }): Promise<GeneralApiResponse<unknown>> => {
   const res = await http.post('/schedule/pickup', data);
   return res.data;

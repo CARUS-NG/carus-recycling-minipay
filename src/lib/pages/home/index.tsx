@@ -39,12 +39,15 @@ const Home = () => {
   //     window.location.reload();
   // }
 
-  // const { data: accountTokenBalance, isLoading: isLoading2 } = useReadContract({
+  // const { data: accountTokenBalance, isLoading: isLoadingAccountTokenBalance } =
+  //   useReadContract({
   //     abi: CARUSABI,
   //     address: CARUS,
   //     functionName: 'accountTokenBalance',
-  //     args: [address]
-  // })
+  //     args: [address],
+  //   });
+
+  // console.log(accountTokenBalance, isLoadingAccountTokenBalance);
 
   // const { data: transactionByAddress, isLoading: isLoading3 } = useReadContract({
   //     abi: CARUSABI,

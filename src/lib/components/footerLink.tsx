@@ -7,10 +7,12 @@ const FooterLink = ({
   icon: Icon,
   text,
   link,
+  index = false,
 }: {
   icon: IconType;
   text: string;
   link: string;
+  index?: boolean;
 }) => {
   const location = useLocation();
   return (
@@ -18,7 +20,8 @@ const FooterLink = ({
       to={link}
       className={cn(
         'flex flex-col items-center space-y-1 text-[#919191]',
-        location.pathname === link && 'text-[#036937]'
+        !index && location.pathname.startsWith(link) && 'text-[#036937]',
+        index && location.pathname === link && 'text-[#036937]'
       )}
     >
       <Icon className="aspect-square w-4" />

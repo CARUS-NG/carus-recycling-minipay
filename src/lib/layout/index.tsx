@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Meta />
-      <div className="mx-auto flex min-h-screen w-full max-w-lg flex-col items-center overflow-hidden bg-[#FCFCFC]">
+      <div className="mx-auto flex min-h-screen w-full max-w-lg flex-col items-center bg-[#FCFCFC]">
         <ToastContainer />
         <Header />
         <SkeletonTheme baseColor="#f7f7f7" highlightColor="#EEEEEE">
