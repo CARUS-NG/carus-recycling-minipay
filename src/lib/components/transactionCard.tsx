@@ -17,7 +17,7 @@ import {
 const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger className="w-full">
         <div className="flex justify-between rounded-xl bg-white p-3">
           <div className="flex items-center space-x-2">
             <img

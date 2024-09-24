@@ -30,7 +30,7 @@ const History = () => {
           cUSD {formatcUsd(totalEarning?.total)}
         </span>
       </p>
-      <div className="mt-10 space-y-2">
+      <div className="mt-10 flex flex-col items-center space-y-2">
         {schedules &&
           !isLoadingGetSchedules &&
           schedules.map((transaction) => (
