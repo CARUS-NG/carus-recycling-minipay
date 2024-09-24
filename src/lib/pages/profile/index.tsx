@@ -14,7 +14,10 @@ const Profile = () => {
       </div>
 
       <div className="mt-5 space-y-3">
-        <div className="flex items-center justify-between rounded-lg bg-white p-3">
+        <a
+          href="https://t.me/+kBh3jiVW4OFmNDJk"
+          className="flex items-center justify-between rounded-lg bg-white p-3"
+        >
           <div className="flex items-center space-x-2">
             <img src="/assets/telegram.svg" alt="telegram" />
             <div>
@@ -25,7 +28,7 @@ const Profile = () => {
             </div>
           </div>
           <ChevronRight />
-        </div>
+        </a>
       </div>
     </div>
   );
