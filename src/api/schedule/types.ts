@@ -12,4 +12,6 @@ export interface Schedule {
   material_amount: number;
   schedule_date: string;
   status: string;
+  country_code: string;
+  phone: string;
 }

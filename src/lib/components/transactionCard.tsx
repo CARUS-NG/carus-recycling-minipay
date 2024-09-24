@@ -1,40 +1,51 @@
+import { DialogTitle } from '@radix-ui/react-dialog';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import moment from 'moment';
 
+import { formatcUsd } from '../utils/format';
 import type { Schedule } from '@/api/schedule/types';
 
+import Button from './buttons/button';
 import TransactionStatus from './transactionStatus';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from './ui/dialog';
 
 const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
   return (
-    <div>
-      <div className="flex justify-between rounded-xl bg-white p-3">
-        <div className="flex items-center space-x-2">
-          <img
-            src="/assets/plastic.svg"
-            alt="plastic"
-            className="aspect-square w-11"
-          />
-          <div className="flex flex-col items-start">
-            <p className="capitalize">{transaction.material}</p>
-            <div className="flex items-end space-x-1">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.0625 2.25V3.9375M12.9375 2.25V3.9375M2.25 14.0625V5.625C2.25 5.17745 2.42779 4.74823 2.74426 4.43176C3.06072 4.11529 3.48995 3.9375 3.9375 3.9375H14.0625C14.5101 3.9375 14.9393 4.11529 15.2557 4.43176C15.5722 4.74823 15.75 5.17745 15.75 5.625V14.0625M2.25 14.0625C2.25 14.5101 2.42779 14.9393 2.74426 15.2557C3.06072 15.5722 3.48995 15.75 3.9375 15.75H14.0625C14.5101 15.75 14.9393 15.5722 15.2557 15.2557C15.5722 14.9393 15.75 14.5101 15.75 14.0625M2.25 14.0625V8.4375C2.25 7.98995 2.42779 7.56073 2.74426 7.24426C3.06072 6.92779 3.48995 6.75 3.9375 6.75H14.0625C14.5101 6.75 14.9393 6.92779 15.2557 7.24426C15.5722 7.56073 15.75 7.98995 15.75 8.4375V14.0625"
-                  stroke="#919191"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p className="text-xs text-[#919191]">
-                {moment(transaction.date).format('MMM Do YYYY')}
-              </p>
-              {/* <svg
+    <Dialog>
+      <DialogTrigger>
+        <div className="flex justify-between rounded-xl bg-white p-3">
+          <div className="flex items-center space-x-2">
+            <img
+              src="/assets/plastic.svg"
+              alt="plastic"
+              className="aspect-square w-11"
+            />
+            <div className="flex flex-col items-start">
+              <p className="capitalize">{transaction.material}</p>
+              <div className="flex items-end space-x-1">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.0625 2.25V3.9375M12.9375 2.25V3.9375M2.25 14.0625V5.625C2.25 5.17745 2.42779 4.74823 2.74426 4.43176C3.06072 4.11529 3.48995 3.9375 3.9375 3.9375H14.0625C14.5101 3.9375 14.9393 4.11529 15.2557 4.43176C15.5722 4.74823 15.75 5.17745 15.75 5.625V14.0625M2.25 14.0625C2.25 14.5101 2.42779 14.9393 2.74426 15.2557C3.06072 15.5722 3.48995 15.75 3.9375 15.75H14.0625C14.5101 15.75 14.9393 15.5722 15.2557 15.2557C15.5722 14.9393 15.75 14.5101 15.75 14.0625M2.25 14.0625V8.4375C2.25 7.98995 2.42779 7.56073 2.74426 7.24426C3.06072 6.92779 3.48995 6.75 3.9375 6.75H14.0625C14.5101 6.75 14.9393 6.92779 15.2557 7.24426C15.5722 7.56073 15.75 7.98995 15.75 8.4375V14.0625"
+                    stroke="#919191"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="text-xs text-[#919191]">
+                  {moment(transaction.date).format('MMM Do YYYY')}
+                </p>
+                {/* <svg
                 width="18"
                 height="18"
                 viewBox="0 0 18 18"
@@ -51,20 +62,71 @@ const TransactionCard = ({ transaction }: { transaction: Schedule }) => {
               <p className="text-xs text-[#919191]">
                 {moment(transaction.date).format('LT')}
               </p> */}
+              </div>
             </div>
           </div>
+          <div className="flex flex-col items-center space-y-1">
+            <p className="text-sm font-medium">
+              cUSD{' '}
+              {Number(transaction.amount).toLocaleString(undefined, {
+                maximumFractionDigits: 3,
+              })}
+            </p>
+            <TransactionStatus status={transaction.status} />
+          </div>
         </div>
-        <div className="flex flex-col items-center space-y-1">
-          <p className="text-sm font-medium">
-            cUSD{' '}
-            {Number(transaction.amount).toLocaleString(undefined, {
-              maximumFractionDigits: 3,
-            })}
-          </p>
-          <TransactionStatus status={transaction.status} />
+      </DialogTrigger>
+      <DialogContent className="max-w-[80%] rounded-lg bg-white">
+        <DialogHeader>
+          <DialogTitle className="text-left text-xl font-semibold">
+            Transaction Details
+          </DialogTitle>
+        </DialogHeader>
+        <div className="mt-3 space-y-2">
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">WASTE CATEGORY</p>
+            <p className="text-sm capitalize">{transaction.material}</p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">NUMBER OF WASTE</p>
+            <p className="text-sm capitalize">{transaction.material_amount}</p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">NUMBER OF BAGS</p>
+            <p className="text-sm capitalize">{transaction.container_amount}</p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">ADDRESS</p>
+            <p className="text-sm capitalize">{transaction.address}</p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">CONTACT NUMBER</p>
+            <p className="text-sm capitalize">
+              +{transaction.country_code} {transaction.phone}
+            </p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">PICKUP DATE</p>
+            <p className="text-sm capitalize">
+              {moment(transaction.date).format('MMMM Do YYYY, h:mm a')}
+            </p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">STATUS</p>
+            <p className="text-sm capitalize">{transaction.status}</p>
+          </div>
+          <div className="flex flex-col items-start space-y-1">
+            <p className="text-xs text-gray-400">REWARD</p>
+            <p className="text-sm capitalize">
+              cUSD {formatcUsd(Number(transaction.amount))}
+            </p>
+          </div>
+          <DialogPrimitive.Close className="w-full">
+            <Button>Close</Button>
+          </DialogPrimitive.Close>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
